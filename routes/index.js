@@ -95,4 +95,8 @@ exports.bruidsTaartenPage = function(req, res, next){
 
  exports.eerstHeiligeCommunieTaartenPage = function(req, res, next){
    res.render('test.ejs');
- }
+ };
+
+ exports.verlovingsTaartenPage = function(req, res, next){
+   res.render('test.ejs');
+ };

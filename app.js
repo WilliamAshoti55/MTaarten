@@ -92,6 +92,7 @@ app.get ('/delete/:id', deletePlayer);
 app.get ('/bruidsTaartenPage', routes.bruidsTaartenPage);
 app.get ('/verjaardagsTaartenPage', routes.verjaardagsTaartenPage);
 app.get ('/eerstHeiligeCommunieTaartenPage', routes.eerstHeiligeCommunieTaartenPage);
+app.get ('/verlovingsTaartenPage', routes.verlovingsTaartenPage);
 
 
 //app.get('/verjaardagsTaartenPage', getVerjaadagstaartenPage);
