@@ -89,8 +89,9 @@ app.get ('/edit/:id', editPlayerPage);                            // call for ed
 app.post('/edit/:id', editPlayer);                                // call for editPlayer POST
 app.get ('/playerDetailsPage/:id', playerDetailsPage);            // call for playerDetailsPage page
 app.get ('/delete/:id', deletePlayer);
-// app.get('/', user.homepageMTaarten);
-//app.get('/', routes.homepageMTaarten);
+app.get('/bruidsTaartenPage', routes.bruidsTaartenPage);
+
+
 //app.get('/verjaardagsTaartenPage', getVerjaadagstaartenPage);
 //app.get('/bruidsTaartenPage', getBruidsTaartenPage);
 //app.get('/addReservation', addReservationPage);

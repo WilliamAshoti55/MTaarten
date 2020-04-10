@@ -51,7 +51,7 @@ exports.loginPost = function(req, res){
 
 exports.homepageMTaarten = function(req, res, next){
   res.render('homepageMTaarten.ejs');
-}
+};
 
 // exports.homepageMTaarten = function(req, res){
 //   message = 'AAAAAA';
@@ -84,3 +84,7 @@ exports.logout = function(req,res){
      res.redirect('/');
   })
 };
+
+exports.bruidsTaartenPage = function(req, res, next){
+   res.render('test.ejs');
+ }
