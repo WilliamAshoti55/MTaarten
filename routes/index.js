@@ -91,4 +91,8 @@ exports.bruidsTaartenPage = function(req, res, next){
 
  exports.verjaardagsTaartenPage = function(req, res, next){
    res.render('test.ejs');
+ };
+
+ exports.eerstHeiligeCommunieTaartenPage = function(req, res, next){
+   res.render('test.ejs');
  }
