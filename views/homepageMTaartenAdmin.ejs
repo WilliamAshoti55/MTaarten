@@ -1,0 +1,49 @@
+<%- include ('partials/headerAdmin.ejs'); -%>
+<h1>Test homepage MTaarten admin</h1>
+<script>
+    var date = new Date().toLocaleDateString();
+</script>
+        <div class="container">
+            <header class="jumbotron">
+                <h1>Welkom bij MTaarten</h1>
+
+                <p>
+                    <a class="btn btn-primary btn-sm" href="/verjaardagsTaartenPage">Verjaardagstaarten toevoegen</a>
+                    <a class="btn btn-primary btn-sm" href="/bruidsTaartenPage">Bruidstaart toevoegen</a>
+                    <a class="btn btn-primary btn-sm" href="/heiligeCommunieCakeCollection">Eerst heilige communie taart toevoegen</a>
+                    <a class="btn btn-primary btn-sm" href="/add">Reservering aanmaken</a>
+                </p>
+            </header>
+        </div>
+<div class="table-wrapper">
+    
+    <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Achternaam</th>
+                    <th scope="col">Typetaart</th>
+                    <th scope="col">Aantalpersonen</th>
+                    <th scope="col">Prijs</th>
+                    <th scope="col">Datum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% players.forEach((player, user) => { %>
+                    <tr>
+                        <td><img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt="" width="200" height="200"></td>
+                        <td><%= player.achternaam %></td>
+                        <td><%= player.typetaart %></td>
+                        <td><%= player.aantalpersonen %></td>
+                        <td><%= player.prijs %></td>
+                        <td><%= player.date %></td>
+                        <td>
+                            <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success" style="margin-bottom: 10px;">Edit</a>
+                            <a href="/playerDetailsPage/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success" style="margin-bottom: 10px;">Details</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+    </table>
+      
+</div>

@@ -1,0 +1,142 @@
+<%- include ('partials/headerAdmin.ejs'); -%>
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+       
+       var date = new Date().toLocaleDateString();
+       $(function(){
+            $("#date").datepicker({
+                formatDate: "dd-mm-yyyy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0,
+                gotoCurrent: true,
+                });
+        });
+
+        
+        
+    </script>
+</head>
+<div class="container">
+    <% if (message != '') { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+        <h1>Klant informatie</h1>
+        <div class="form-group-row">
+            <label class="col-sm-2 col-form-label">Achternaam</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="achternaam" id="achternaam" placeholder="Achternaam" style="margin-bottom: 5px;" required>
+            </div>
+            <label class="col-sm-2 col-form-label">Telefoonnummer</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="telefoonnummer" id="telefoonnummer" placeholder="Telefoonnummer" style="margin-bottom: 5px;" required>
+            </div>
+            
+            <label class="col-sm-2 col-form-label">Adres</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" type="text" name="adres" id="adres" placeholder="Adres" style="margin-bottom: 5px;" required></textarea>
+            </div>
+
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="email" id="email" placeholder="Email" style="margin-bottom: 5px;">
+            </div>
+
+            <!-- <label class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="username" id="username" placeholder="Username" style="margin-bottom: 5px;" required>
+            </div> -->
+
+            <!-- <label class="col-sm-2 col-form-label">Number</label>
+            <div class="col-sm-10">
+                <input class="form-control"type="number" name="number" id="number" placeholder="Number" style="margin-bottom: 5px;" required>
+            </div> -->
+        </div>
+        <div class="form-row">
+            <h1>Reservering informatie</h1>
+            <label class="col-sm-2 col-form-label">Typetaart</label>
+            <div class="col-sm-10">
+                <select id="typetaart" name="typetaart" class="form-control" style="margin-bottom: 5px;" required>
+                    <option selected disabled>Selecteer typetaart</option>
+                    <option>Verjaardagstaart</option>
+                    <option>Verlovingstaart</option>
+                    <option>Bruidstaart</option>
+                    <option>Eerste heilige communie taart</option>
+                    <option>Geslacht bekentenistaart</option>
+                    <option>Moederdag taart</option>
+                    <option>Vaderdags taart</option>
+                    <option>Cupcakes</option>
+                    <option>Overige</option>
+                </select>
+            </div>
+            <label class="col-sm-2 col-form-label">Aantalpersonen</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" style="margin-bottom: 5px;" required>
+            </div>
+            <label class="col-sm-2 col-form-label">Smaak</label>
+            <div class="col-sm-10">
+                <select id="smaak" name="smaak" class="form-control" style="margin-bottom: 5px;" required>
+                    <option selected disabled>Smaak</option>
+                    <option>Vanillia smaak</option>
+                    <option>Chocolade smaak</option>
+                    <option>Citroen smaak</option>
+                    <option>Mokka smaak</option>
+                    <option>Anders, zie opmerkingen</option>
+                </select>
+            </div>
+            <label class="col-sm-2 col-form-label">Vulling</label>
+            <div class="col-sm-10">
+                <select id="vulling" name="vulling" class="form-control" style="margin-bottom: 5px;" required>
+                    <option selected disabled>Vulling</option>
+                    <option>Vanillia vulling</option>
+                    <option>Chocolade vulling</option>
+                    <option>Citroen vulling</option>
+                    <option>Anders, zie opmerkingen</option>
+                </select>
+            </div>
+
+            <label class="col-sm-2 col-form-label" for="player-img"><b>Design</b></label>
+            <div class="col-sm-10">
+                <input type="file" name="image" id="player-img" class="form-control" style="margin-bottom: 5px;" required>
+            </div>
+
+            <label class="col-sm-2 col-form-label">Prijs</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="prijs" id="prijs" placeholder="Prijs" style="margin-bottom: 5px;" required >
+            </div>
+
+            <label class="col-sm-2 col-form-label">Reeds voldaan</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="reedsVoldaan" id="reedsVoldaan" placeholder="Reeds voldaan" style="margin-bottom: 5px;" >
+            </div>
+
+            <label class="col-sm-2 col-form-label">Nog te voldoen</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="nogTeVoldoen" id="nogTeVoldoen" placeholder="Nog te voldoen" style="margin-bottom: 5px;" >
+            </div>
+            <label class="col-sm-2 col-form-label">Datum</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text"  id="date" name="date" placeholder="Date" style="margin-bottom: 5px;"> 
+            </div>
+            <label class="col-sm-2 col-form-label">Opmerking</label>
+            <div class="col-sm-10">
+                <textarea type="text" class="form-control" name="opmerking" id="opmerking" placeholder="Opmerkingen" style="margin-bottom: 5px;" ></textarea>
+            </div>
+            <!-- <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div> -->
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Reservering toevoegen</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

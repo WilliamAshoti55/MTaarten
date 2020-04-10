@@ -1,0 +1,126 @@
+<%- include ('partials/header.ejs'); -%>
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#date").datepicker({
+                formatDate: "yy-mm-dd",
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0,
+                gotoCurrent: true,
+                });
+        });
+    </script>
+</head>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (player) { %>
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <h1>Klant informatie</h1>
+            <div class="form-group-row">
+                <label class="col-sm-2 col-form-label">Achternaam</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="achternaam" id="achternaam" value="<%= player.achternaam %>" style="margin-bottom: 5px;" disabled>
+                </div>
+                <label class="col-sm-2 col-form-label">Telefoonnummer</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="telefoonnummer" id="telefoonnummer" value="<%= player.telefoonnummer %>" style="margin-bottom: 5px;" disabled>
+                </div>
+                <label class="col-sm-2 col-form-label">Adres</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="adres" id="adres" placeholder="Adres" value="<%= player.adres %>" style="margin-bottom: 5px;" disabled>
+                </div>
+                <label class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" value="<%= player.email %>" style="margin-bottom: 5px;" disabled>
+                </div>
+                <label class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" id="username" value="<%= player.user_name %>" required disabled title="Username cannot be edited." style="margin-bottom: 5px;" disabled>
+                </div>
+                <label class="col-sm-2 col-form-label">Number</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Number" value="<%= player.number %>" disabled>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <h1>Reservering informatie</h1>
+                <label class="col-sm-2 col-form-label">Typetaart</label>
+                <div class="col-sm-10">
+                    <select id="typetaart" name="typetaart" class="form-control" style="margin-bottom: 5px;" disabled>
+                        <option selected disabled><%= player.typetaart %></option>
+                        <option>Verjaardagstaart</option>
+                        <option>Verlovingstaart</option>
+                        <option>Bruidstaart</option>
+                        <option>Eerste heilige communie taart</option>
+                        <option>Geslacht bekentenistaart</option>
+                        <option>Moederdag taart</option>
+                        <option>Vaderdags taart</option>
+                        <option>Cupcakes</option>
+                        <option>Overige</option>
+                    </select>
+                </div>
+            </div>
+            <label class="col-sm-2 col-form-label">Aantalpersonen</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" value="<%= player.aantalpersonen %>" style="margin-bottom: 5px;" disabled>
+            </div>
+            <label class="col-sm-2 col-form-label">Smaak</label>
+            <div class="col-sm-10">
+                <select id="smaak" name="smaak" class="form-control" style="margin-bottom: 5px;" disabled>
+                    <option selected><%= player.smaak %></option>
+                    <option>Vanillia smaak</option>
+                    <option>Chocolade smaak</option>
+                    <option>Citroen smaak</option>
+                    <option>Mokka smaak</option>
+                    <option>Anders, zie opmerkingen</option>
+                </select>
+            </div>
+            <label class="col-sm-2 col-form-label">Vulling</label>
+            <div class="col-sm-10">
+                <select id="vulling" name="vulling" class="form-control" style="margin-bottom: 5px;" disabled>
+                    <option selected disabled><%= player.vulling %></option>
+                    <option>Vanillia vulling</option>
+                    <option>Chocolade vulling</option>
+                    <option>Citroen vulling</option>
+                    <option>Anders, zie opmerkingen</option>
+                </select>
+            </div>
+            <label class="col-sm-2 col-form-label">Prijs</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="prijs" id="prijs" placeholder="Prijs" value="<%= player.prijs %>" style="margin-bottom: 5px;" disabled >
+            </div>
+            <label class="col-sm-2 col-form-label">Reedsvoldaan</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="reedsVoldaan" id="reedsVoldaan" placeholder="Reeds voldaan" value="<%= player.reedsVoldaan %>" style="margin-bottom: 5px;" disabled >
+            </div>
+            <label class="col-sm-2 col-form-label">Restant</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="nogTeVoldoen" id="nogTeVoldoen" placeholder="Nog te voldoen" value="<%= player.nogTeVoldoen %>" style="margin-bottom: 5px;" disabled >
+            </div>
+            <label class="col-sm-2 col-form-label">Opmerking</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="opmerking" id="opmerking" placeholder="Opmerkingen" value="<%= player.opmerking %>" style="margin-bottom: 5px;" disabled >
+            </div>
+            <label class="col-sm-2 col-form-label">Datum</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text"  id="date" name="date" placeholder="Datum" value="<%= player.date %>" style="margin-bottom: 5px;" disabled> 
+            </div>
+            <!-- <button type="submit" class="btn btn-success float-right" >Update Player</button>
+            <a href="/delete/<%= player.id %>" onclick="return confirm('Weet je zeker dat je de bestelling wilt verwijderen?');" class="btn btn btn-danger float-right" style="margin-bottom: 5px;">Delete</a> -->
+        </form>
+    <% } else { %>
+        <p class="text-center">Player Not Found. Go <a href="/add">here</a> to add players.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>

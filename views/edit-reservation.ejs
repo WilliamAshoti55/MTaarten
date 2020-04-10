@@ -1,0 +1,94 @@
+<%- include ("partials/headerAdmin") %>
+
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#datum").datepicker({
+                
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0,
+                gotoCurrent: true,
+                });
+        });
+    </script>
+</head>
+
+<div class="container">
+    <% if (message != '') { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <form class="add-reservation-form" action="" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="achternaam" id="achternaam" placeholder="Achternaam" required>
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="telefoonnummer" id="telefoonnummer" placeholder="Telefoonnummer" required>
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="adres" id="adres" placeholder="Adres" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <select id="typetaart" name="typetaart" class="form-control" required>
+                    <option selected disabled>Selecteer typetaart</option>
+                    <option>Verjaardagstaart</option>
+                    <option>Verlovingstaart</option>
+                    <option>Bruidstaart</option>
+                    <option>Eerste heilige communie taart</option>
+                    <option>Geslacht bekentenistaart</option>
+                    <option>Moederdag taart</option>
+                    <option>Vaderdags taart</option>
+                    <option>Cupcakes</option>
+                    <option>Overige</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <input class="form-control" type="text"  id="datum" name="reserveringen[datum]" placeholder="Datum"> 
+            </div>
+            <div class="col-md-12">
+                <label for="image"><b>Voorbeeld taart</b></label><br>
+                <input type="file" name="image" id="image" class="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" required>
+            </div>
+            <div class="form-group col-md-6">
+                <select id="smaak" name="smaak" class="form-control" required>
+                    <option selected disabled>Smaak</option>
+                    <option>Vanillia smaak</option>
+                    <option>Chocolade smaak</option>
+                    <option>Citroen smaak</option>
+                    <option>Mokka smaak</option>
+                    <option>Anders, zie opmerkingen</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <select id="vulling" name="vulling" class="form-control" required>
+                    <option selected disabled>Smaak</option>
+                    <option>Vanillia vulling</option>
+                    <option>Chocolade vulling</option>
+                    <option>Citroen vulling</option>
+                    <option>Anders, zie opmerkingen</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="opmerkingen" id="opmerkingen" placeholder="Opmerkingen" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Opslaan</button>
+    </form>
+</div>
+</div>
+</body>
+</html>
