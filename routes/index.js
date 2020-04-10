@@ -87,4 +87,8 @@ exports.logout = function(req,res){
 
 exports.bruidsTaartenPage = function(req, res, next){
    res.render('test.ejs');
+ };
+
+ exports.verjaardagsTaartenPage = function(req, res, next){
+   res.render('test.ejs');
  }

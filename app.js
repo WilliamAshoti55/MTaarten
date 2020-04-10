@@ -89,7 +89,8 @@ app.get ('/edit/:id', editPlayerPage);                            // call for ed
 app.post('/edit/:id', editPlayer);                                // call for editPlayer POST
 app.get ('/playerDetailsPage/:id', playerDetailsPage);            // call for playerDetailsPage page
 app.get ('/delete/:id', deletePlayer);
-app.get('/bruidsTaartenPage', routes.bruidsTaartenPage);
+app.get ('/bruidsTaartenPage', routes.bruidsTaartenPage);
+app.get ('/verjaardagsTaartenPage', routes.verjaardagsTaartenPage);
 
 
 //app.get('/verjaardagsTaartenPage', getVerjaadagstaartenPage);
