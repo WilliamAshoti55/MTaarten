@@ -11,12 +11,6 @@ const http          = require('http');
 const flash         = require('connect-flash');
 var routes          = require('./routes/index.js');
 
-
-// const {getHomePageMTaarten}      = require('./routes/index1');
-// const {getHomePage}              = require('./routes/index1');
-// const {getLoginPage1}            = require('./routes/index1');
-// const {getLoginPage}             = require('./routes/index1');
-// const {getLoginPageTest}         = require('./routes/index1');
 const port                       = 3000;
 // const {getVerjaadagstaartenPage} = require('./routes/index1');
 // const {getBruidsTaartenPage} = require('./routes/index1');
