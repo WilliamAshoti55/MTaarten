@@ -15,7 +15,7 @@ const port                       = 3000;
 // const {getVerjaadagstaartenPage} = require('./routes/index1');
 // const {getBruidsTaartenPage} = require('./routes/index1');
 const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage, addReservationPage, addReservation, editReservationPage, editReservation} = require('./routes/player');
-
+const {addBruidstaartPage, addBruidstaart} = require ('./routes/bruidstaart');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
@@ -77,8 +77,16 @@ app.post('/login', routes.loginPost);                             // call for lo
 app.get ('/', routes.homepageMTaarten);                           // call for homepageMTaarten page
 app.get ('/homepageMTaartenAdmin', routes.homepageMTaartenAdmin); // call for homepageMTaartenAdmin page
 app.get ('/home/logout', routes.logout);                          // call for logout page
+
+
 app.get ('/add', addPlayerPage);                                  // call for addPlayerPage page
 app.post('/add', addPlayer);                                      // call for addPlayer POST
+
+app.get ('/addBruidstaart', addBruidstaartPage);
+app.post('/addBruidstaart', addBruidstaart);
+
+
+
 app.get ('/edit/:id', editPlayerPage);                            // call for editPlayerPage page
 app.post('/edit/:id', editPlayer);                                // call for editPlayer POST
 app.get ('/playerDetailsPage/:id', playerDetailsPage);            // call for playerDetailsPage page
