@@ -1,0 +1,38 @@
+<%- include ('partials/headerAdmin.ejs'); -%>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<h1>Test</h1>
+
+
+<div class="table-wrapper">
+    
+    <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Bruidstaartnaam</th>
+                    <th scope="col">Aantalpersonen</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% players.forEach((player, user) => { %>
+                    <tr>
+                        <td><img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt="" width="200" height="200"></td>
+                        <td><%= player.achternaam %></td>
+                        <td><%= player.typetaart %></td>
+                        <td><%= player.aantalpersonen %></td>
+                        <td><%= player.prijs %></td>
+                        <td><%= player.date %></td>
+                        </tr>
+                        <% }) %>
+            <!-- <% bruidstaarts.forEach((bruidstaart, user) => { %>
+                <tr>
+                    <td><img src="/assets/bruidstaartenmap/<%= bruidstaart.image %>" class="rounded-circle player-img" alt="" width="200" height="200"></td>
+                    <td><%= bruidstaart.bruidstaartnaam %></td>
+                    <td><%= bruidstaart.aantalpersonen %></td>
+                </tr>
+            <% }) %> -->
+            </tbody>
+    </table>
+    </div>
+           
