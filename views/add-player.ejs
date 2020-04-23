@@ -9,7 +9,8 @@
        var date = new Date().toLocaleDateString();
        $(function(){
             $("#date").datepicker({
-                formatDate: "dd-mm-yyyy",
+                // formatDate: "yyyy-mm-dd",
+                dateFormat: "dd-mm-yy",
                 changeMonth: true,
                 changeYear: true,
                 minDate: 0,
@@ -30,16 +31,16 @@
         <div class="form-group-row">
             <label class="col-sm-2 col-form-label">Achternaam</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="achternaam" id="achternaam" placeholder="Achternaam" style="margin-bottom: 5px;" required>
+                <input class="form-control" type="text" name="achternaam" id="achternaam" placeholder="Achternaam" style="margin-bottom: 5px;" >
             </div>
             <label class="col-sm-2 col-form-label">Telefoonnummer</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="telefoonnummer" id="telefoonnummer" placeholder="Telefoonnummer" style="margin-bottom: 5px;" required>
+                <input class="form-control" type="text" name="telefoonnummer" id="telefoonnummer" placeholder="Telefoonnummer" style="margin-bottom: 5px;" >
             </div>
             
             <label class="col-sm-2 col-form-label">Adres</label>
             <div class="col-sm-10">
-                <textarea class="form-control" type="text" name="adres" id="adres" placeholder="Adres" style="margin-bottom: 5px;" required></textarea>
+                <textarea class="form-control" type="text" name="adres" id="adres" placeholder="Adres" style="margin-bottom: 5px;" ></textarea>
             </div>
 
             <label class="col-sm-2 col-form-label">Email</label>
@@ -61,7 +62,7 @@
             <h1>Reservering informatie</h1>
             <label class="col-sm-2 col-form-label">Typetaart</label>
             <div class="col-sm-10">
-                <select id="typetaart" name="typetaart" class="form-control" style="margin-bottom: 5px;" required>
+                <select id="typetaart" name="typetaart" class="form-control" style="margin-bottom: 5px;" >
                     <option selected disabled>Selecteer typetaart</option>
                     <option>Verjaardagstaart</option>
                     <option>Verlovingstaart</option>
@@ -76,11 +77,11 @@
             </div>
             <label class="col-sm-2 col-form-label">Aantalpersonen</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" style="margin-bottom: 5px;" required>
+                <input class="form-control" type="text" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" style="margin-bottom: 5px;" >
             </div>
             <label class="col-sm-2 col-form-label">Smaak</label>
             <div class="col-sm-10">
-                <select id="smaak" name="smaak" class="form-control" style="margin-bottom: 5px;" required>
+                <select id="smaak" name="smaak" class="form-control" style="margin-bottom: 5px;" >
                     <option selected disabled>Smaak</option>
                     <option>Vanillia smaak</option>
                     <option>Chocolade smaak</option>
@@ -91,7 +92,7 @@
             </div>
             <label class="col-sm-2 col-form-label">Vulling</label>
             <div class="col-sm-10">
-                <select id="vulling" name="vulling" class="form-control" style="margin-bottom: 5px;" required>
+                <select id="vulling" name="vulling" class="form-control" style="margin-bottom: 5px;" >
                     <option selected disabled>Vulling</option>
                     <option>Vanillia vulling</option>
                     <option>Chocolade vulling</option>
@@ -102,12 +103,12 @@
 
             <label class="col-sm-2 col-form-label" for="player-img"><b>Design</b></label>
             <div class="col-sm-10">
-                <input type="file" name="image" id="player-img" class="form-control" style="margin-bottom: 5px;" required>
+                <input type="file" name="image" id="player-img" class="form-control" style="margin-bottom: 5px;" >
             </div>
 
             <label class="col-sm-2 col-form-label">Prijs</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="prijs" id="prijs" placeholder="Prijs" style="margin-bottom: 5px;" required >
+                <input type="text" class="form-control" name="prijs" id="prijs" placeholder="Prijs" style="margin-bottom: 5px;" >
             </div>
 
             <label class="col-sm-2 col-form-label">Reeds voldaan</label>
