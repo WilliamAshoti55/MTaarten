@@ -1,1 +1,33 @@
-<h1>Dit is de pagina van Bruidstaarten toevoegen</h1>
+<%- include ('partials/headerAdmin.ejs'); -%>
+
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<div class="container">
+    <% if (message != '') { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <form class="addBruidstaart-form" action="" method="post" enctype="multipart/form-data">
+        <h1>Bruidstaart Toevoegen</h1>
+        <div class="form-group-row">
+            
+            <label class="col-sm-2 col-form-label">Bruidstaartnaam</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="bruidstaartnaam" id="bruidstaartnaam" placeholder="Bruidstaartnaam" style="margin-bottom: 5px;" >
+            </div>
+
+            <label class="col-sm-2 col-form-label">Aantalpersonen</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" style="margin-bottom: 5px;" >
+            </div>
+
+            <label class="col-sm-2 col-form-label" for="player-img"><b>Design</b></label>
+            <div class="col-sm-10">
+                <input type="file" name="image" id="player-img" class="form-control" style="margin-bottom: 5px;" >
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Reservering toevoegen</button>
+        </div>
