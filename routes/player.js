@@ -39,7 +39,7 @@ module.exports = {
         let fileExtension   = uploadedFile.mimetype.split('/')[1];
         image_name          = achternaam + '.' + fileExtension;
 
-        let usernameQuery = "SELECT * FROM `players` WHERE user_name = '" + username + "'";
+        // let usernameQuery = "SELECT * FROM `players` WHERE user_name = '" + username + "'";
 
         // db.query(usernameQuery, (err, result) => {
         //     if (err) {

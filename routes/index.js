@@ -34,10 +34,6 @@ exports.loginPost = function(req, res){
                 
      });
   } 
-  // else {
-  //    res.render('index.ejs',{message: message});
-  // }
-
 };
 
 // exports.signup = function(req, res){
@@ -52,11 +48,6 @@ exports.loginPost = function(req, res){
 exports.homepageMTaarten = function(req, res, next){
   res.render('homepageMTaarten.ejs');
 };
-
-// exports.homepageMTaarten = function(req, res){
-//   message = 'AAAAAA';
-//   res.render('homepageMTaarten', {message: message})
-// };
 
 exports.homepageMTaartenAdmin = function(req, res, next){
            
@@ -85,11 +76,14 @@ exports.logout = function(req,res){
   })
 };
 
-exports.bruidsTaartenPage = function(req, res, next){
-   res.render('bruidstaartenPage.ejs');
- };
-
- exports.verjaardagsTaartenPage = function(req, res, next){
+exports.bruidstaartenPage = function(req, res, next){
+  var sql1  = "SELECT * FROM `bruidstaarten` ORDER BY id ASC"; // query database to get all the players
+  db.query(sql1, function(err, result){
+    res.render('bruidstaartenPage', {bruidstaarten:result});
+  });
+};
+ 
+exports.verjaardagsTaartenPage = function(req, res, next){
    res.render('test.ejs');
  };
 

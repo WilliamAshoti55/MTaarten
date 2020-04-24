@@ -15,23 +15,13 @@
             </thead>
             
             <tbody>
-                <% players.forEach((player, user) => { %>
-                    <tr>
-                        <td><img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt="" width="200" height="200"></td>
-                        <td><%= player.achternaam %></td>
-                        <td><%= player.typetaart %></td>
-                        <td><%= player.aantalpersonen %></td>
-                        <td><%= player.prijs %></td>
-                        <td><%= player.date %></td>
-                        </tr>
-                        <% }) %>
-            <!-- <% bruidstaarts.forEach((bruidstaart, user) => { %>
+            <% bruidstaarten.forEach((bruidstaart, user) => { %>
                 <tr>
                     <td><img src="/assets/bruidstaartenmap/<%= bruidstaart.image %>" class="rounded-circle player-img" alt="" width="200" height="200"></td>
                     <td><%= bruidstaart.bruidstaartnaam %></td>
                     <td><%= bruidstaart.aantalpersonen %></td>
                 </tr>
-            <% }) %> -->
+            <% }) %>
             </tbody>
     </table>
     </div>
