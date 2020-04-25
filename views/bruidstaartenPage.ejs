@@ -1,28 +1,48 @@
 <%- include ('partials/headerAdmin.ejs'); -%>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<h1>Test</h1>
+
+<div>
+    <header class="jumbotron">
+        <div class="container">
+        <h1>Welkom bij bruidstaarten pagina</h1>
+        <p>Bekijk onze aanbod</p>
+        </div>
+    </header>
 
 
-<div class="table-wrapper">
+
+        <div class="row">
     
-    <table class="table table-hovered">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Bruidstaartnaam</th>
-                    <th scope="col">Aantalpersonen</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-            <% bruidstaarten.forEach((bruidstaart, user) => { %>
-                <tr>
-                    <td><img src="/assets/bruidstaartenmap/<%= bruidstaart.image %>" class="rounded-circle player-img" alt="" width="200" height="200"></td>
-                    <td><%= bruidstaart.bruidstaartnaam %></td>
-                    <td><%= bruidstaart.aantalpersonen %></td>
-                </tr>
-            <% }) %>
-            </tbody>
-    </table>
-    </div>
-           
+            <% bruidstaarten.forEach((bruidstaart, user) => { %>        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="/assets/bruidstaartenmap/<%= bruidstaart.image %>" class="rounded-circle player-img" alt="">
+                </div>
+                <h4><%= bruidstaart.bruidstaartnaam %></h4>
+                <!-- <h4><%= bruidstaart.aantalpersonen %></h4> -->
+            </div>
+                <% }) %>
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
