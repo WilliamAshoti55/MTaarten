@@ -2,6 +2,9 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 <div>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/bruidstaartenPage.css">
+    </head>
     <header class="jumbotron">
         <div class="container">
         <h1>Welkom bij bruidstaarten pagina</h1>
@@ -11,15 +14,30 @@
 
 
 
-        <div class="row">
+        <div class="row" style="display: flex; flex-wrap: wrap; overflow: hidden;">
     
             <% bruidstaarten.forEach((bruidstaart, user) => { %>        
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="/assets/bruidstaartenmap/<%= bruidstaart.image %>" class="rounded-circle player-img" alt="">
+                        <div class="caption" style="display: ">
+                            <label>Naam:</label>
+                                    <%= bruidstaart.bruidstaartnaam %>
+                                
+                        </div>
+                        <div class="caption">
+                            <label>Aantalpersonen:</label>
+                            <%= bruidstaart.aantalpersonen %>
+                        </div>
+                        <div class="caption">
+                            <label>Prijs:</label>
+                            <h5>Op aanvraag. Bel: 0634700961</h5>
+                        </div>
+
                 </div>
-                <h4><%= bruidstaart.bruidstaartnaam %></h4>
-                <!-- <h4><%= bruidstaart.aantalpersonen %></h4> -->
+                
+                
+                
             </div>
                 <% }) %>
         </div>
