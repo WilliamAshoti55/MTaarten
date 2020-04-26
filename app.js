@@ -11,8 +11,9 @@ const http          = require('http');
 const flash         = require('connect-flash');
 var routes          = require('./routes/index.js');
 const port          = 3000;
-const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage} = require('./routes/player');
-const {addBruidstaartPage, addBruidstaart, deleteBruidstaart} = require ('./routes/bruidstaart');
+const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage}   = require('./routes/player');
+const {addBruidstaartPage, addBruidstaart, deleteBruidstaart}                                   = require ('./routes/bruidstaart');
+const {addVerjaardagstaartPage, addVerjaardagstaart, deleteVerjaardagstaart}                    = require ('./routes/verjaardagstaart');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
@@ -83,6 +84,9 @@ app.get ('/addBruidstaart', addBruidstaartPage);
 app.post('/addBruidstaart', addBruidstaart);
 app.get ('/deleteBruidstaart/:id', deleteBruidstaart)
 
+app.get ('/addVerjaardagstaart', addVerjaardagstaartPage);
+app.post('/addVerjaardagstaart', addVerjaardagstaart);
+app.get ('/deleteVerjaardagstaart/:id', deleteVerjaardagstaart);
 
 
 app.get ('/edit/:id', editPlayerPage);                            // call for editPlayerPage page
