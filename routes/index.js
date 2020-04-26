@@ -1,10 +1,4 @@
 
- 
-// exports.index = function(req, res){
-//     var message = 'Rwar';
-//   res.render('index',{message: message})
-// },
-
 exports.loginGet = function(req, res){
   var message = 'Rwaraa';
   res.render('login', {message: message})
@@ -36,15 +30,6 @@ exports.loginPost = function(req, res){
   } 
 };
 
-// exports.signup = function(req, res){
-//   message = '';
-//   if(req.method == "POST"){
-//     //post data
-//   }else {
-//     res.render('signup');
-//   }
-// };
-
 exports.homepageMTaarten = function(req, res, next){
   res.render('homepageMTaarten.ejs');
 };
@@ -69,16 +54,9 @@ exports.homepageMTaartenAdmin = function(req, res, next){
   });            
 };
 
-exports.logout = function(req,res){
-   
-  req.session.destroy(function(err) {
-     res.redirect('/');
-  })
-};
-
-exports.bruidstaartenPage = function(req, res, next){
-  var sql1  = "SELECT * FROM `bruidstaarten` ORDER BY id ASC"; // query database to get all the players
-  db.query(sql1, function(err, result){
+exports.bruidstaartenPage  = function(req, res, next){
+  var sql  = "SELECT * FROM `bruidstaarten` ORDER BY id ASC"; // query database to get all the players
+  db.query(sql, function(err, result){
     res.render('bruidstaartenPage', {bruidstaarten:result});
   });
 };
@@ -94,3 +72,10 @@ exports.verjaardagsTaartenPage = function(req, res, next){
  exports.verlovingsTaartenPage = function(req, res, next){
    res.render('test.ejs');
  };
+
+ exports.logout = function(req,res){
+   
+  req.session.destroy(function(err) {
+     res.redirect('/');
+  })
+};

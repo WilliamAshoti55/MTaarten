@@ -10,12 +10,9 @@ const passport      = require("passport");
 const http          = require('http');
 const flash         = require('connect-flash');
 var routes          = require('./routes/index.js');
-
-const port                       = 3000;
-// const {getVerjaadagstaartenPage} = require('./routes/index1');
-// const {getBruidsTaartenPage} = require('./routes/index1');
-const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage, addReservationPage, addReservation, editReservationPage, editReservation} = require('./routes/player');
-const {addBruidstaartPage, addBruidstaart} = require ('./routes/bruidstaart');
+const port          = 3000;
+const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage} = require('./routes/player');
+const {addBruidstaartPage, addBruidstaart, deleteBruidstaart} = require ('./routes/bruidstaart');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
@@ -84,6 +81,7 @@ app.post('/add', addPlayer);                                      // call for ad
 
 app.get ('/addBruidstaart', addBruidstaartPage);
 app.post('/addBruidstaart', addBruidstaart);
+app.get ('/deleteBruidstaart/:id', deleteBruidstaart)
 
 
 

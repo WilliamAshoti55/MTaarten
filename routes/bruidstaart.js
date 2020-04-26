@@ -2,10 +2,14 @@ const fs = require('fs');
 
 module.exports = {
     addBruidstaartPage: (req, res) => {
-        res.render('addBruidstaart.ejs', {
-            title: 'Welkom op de pagina Bruidstaarten',
-            message: 'Vroeeemmmmmmmmmmmmmmm'
-        });
+        var sql  = "SELECT * FROM `bruidstaarten` ORDER BY id ASC"; // query database to get all the players
+        db.query(sql, function(err, result){
+            res.render('addBruidstaart', {
+                bruidstaarten:result,
+                message: ''
+            });
+        });    
+       
     },
     addBruidstaart: (req,res) => {
 
@@ -45,4 +49,41 @@ module.exports = {
             });
         }
 
-}}
+},
+
+deleteBruidstaart: (req,res) => {
+    var user =  req.session.user,
+    userId = req.session.userId;
+        if(userId == null){
+            res.render('login', {
+                
+                message: 'Uw inlog sessie is verlopen. Log aub opnieuw in.'
+            })
+            
+        };
+    
+        let bruidstaartId = req.params.id;
+        let getImageQuery = 'SELECT image from `bruidstaarten` WHERE id = "' + bruidstaartId + '"';
+        let deleteBruidstaartQuery = 'DELETE FROM bruidstaarten WHERE id = "' + bruidstaartId + '"';
+
+        db.query(getImageQuery, (err, result) => {
+            if (err) {
+                return res.status(500).send(err);
+            }
+
+            let image = result[0].image;
+
+            fs.unlink(`public/assets/bruidstaartenmap/${image}`, (err) => {
+                if (err) {
+                    return res.status(500).send(err);
+                }
+                db.query(deleteBruidstaartQuery, (err, result) => {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                    res.redirect('/addBruidstaart');
+                });
+            });
+        });
+}
+}

@@ -31,4 +31,36 @@
             </div>
             <button type="submit" class="btn btn-primary float-right">Reservering toevoegen</button>
         </div>
+
+        <div class="row" style="display: flex; flex-wrap: wrap; overflow: hidden;">
+    
+            <% bruidstaarten.forEach((bruidstaart, user) => { %>        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="/assets/bruidstaartenmap/<%= bruidstaart.image %>" class="rounded-circle player-img" alt="">
+                        <div class="caption">
+                            <label>Naam:</label>
+                                    <%= bruidstaart.bruidstaartnaam %>
+                                
+                        </div>
+                        <div class="caption">
+                            <label>Aantalpersonen:</label>
+                            <%= bruidstaart.aantalpersonen %>
+                        </div>
+                        <div class="caption">
+                            <label>Prijs:</label>
+                            <h5>Op aanvraag. Bel: 0634700961</h5>
+                            <a href="/deleteBruidstaart/<%= bruidstaart.id %>" onclick="return confirm('Weet je zeker dat je de bruidstaart foto wilt verwijderen?');" class="btn btn-danger float-right" style="margin-bottom: 10px;">Delete</a>
+                        </div>
+
+                </div>
+                
+                
+                
+            </div>
+                <% }) %>
+        </div>
+        
     </form>
+
+    
