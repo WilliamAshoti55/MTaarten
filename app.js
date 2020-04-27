@@ -11,9 +11,10 @@ const http          = require('http');
 const flash         = require('connect-flash');
 var routes          = require('./routes/index.js');
 const port          = 3000;
-const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage}   = require('./routes/player');
+const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage}   = require ('./routes/player');
 const {addBruidstaartPage, addBruidstaart, deleteBruidstaart}                                   = require ('./routes/bruidstaart');
 const {addVerjaardagstaartPage, addVerjaardagstaart, deleteVerjaardagstaart}                    = require ('./routes/verjaardagstaart');
+const {addVerlovingstaart, addVerlovingstaartPage, deleteVerlovingstaart}                      = require ('./routes/verlovingstaart');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
@@ -79,7 +80,10 @@ app.get ('/home/logout', routes.logout);                          // call for lo
 
 app.get ('/add', addPlayerPage);                                  // call for addPlayerPage page
 app.post('/add', addPlayer);                                      // call for addPlayer POST
-
+app.get ('/edit/:id', editPlayerPage);                            // call for editPlayerPage page
+app.post('/edit/:id', editPlayer);                                // call for editPlayer POST
+app.get ('/delete/:id', deletePlayer);
+                                      
 app.get ('/addBruidstaart', addBruidstaartPage);
 app.post('/addBruidstaart', addBruidstaart);
 app.get ('/deleteBruidstaart/:id', deleteBruidstaart)
@@ -88,11 +92,13 @@ app.get ('/addVerjaardagstaart', addVerjaardagstaartPage);
 app.post('/addVerjaardagstaart', addVerjaardagstaart);
 app.get ('/deleteVerjaardagstaart/:id', deleteVerjaardagstaart);
 
+app.get ('addVerlovingstaart', addVerlovingstaartPage);
+app.post('addVerlovingstaart', addVerlovingstaart);
+app.get ('deleteVerlovingstaart/:id', deleteVerlovingstaart);
 
-app.get ('/edit/:id', editPlayerPage);                            // call for editPlayerPage page
-app.post('/edit/:id', editPlayer);                                // call for editPlayer POST
+
+
 app.get ('/playerDetailsPage/:id', playerDetailsPage);            // call for playerDetailsPage page
-app.get ('/delete/:id', deletePlayer);
 app.get ('/bruidstaartenPage', routes.bruidstaartenPage);
 app.get ('/verjaardagsTaartenPage', routes.verjaardagsTaartenPage);
 app.get ('/eerstHeiligeCommunieTaartenPage', routes.eerstHeiligeCommunieTaartenPage);

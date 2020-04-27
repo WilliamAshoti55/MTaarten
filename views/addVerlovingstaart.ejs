@@ -1,0 +1,66 @@
+<%- include ('partials/headerAdmin.ejs'); -%>
+
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<div class="container">
+    <% if (message != '') { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <form class="addVerlovingstaart-form" action="" method="post" enctype="multipart/form-data">
+        <h1>Verjaardagstaart Toevoegen</h1>
+        <div class="form-group-row">
+            
+            <label class="col-sm-2 col-form-label">Verlovingstaart naam</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="verlovingstaartnaam" id="verlovingstaartnaam" placeholder="Verlovingstaart naam" style="margin-bottom: 5px;" >
+            </div>
+
+            <label class="col-sm-2 col-form-label">Aantalpersonen</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="aantalpersonen" id="aantalpersonen" placeholder="Aantalpersonen" style="margin-bottom: 5px;" >
+            </div>
+
+            <label class="col-sm-2 col-form-label" for="player-img"><b>Design</b></label>
+            <div class="col-sm-10">
+                <input type="file" name="image" id="verlovingstaart-img" class="form-control" style="margin-bottom: 5px;" >
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Reservering toevoegen</button>
+        </div>
+
+        <div class="row" style="display: flex; flex-wrap: wrap; overflow: hidden;">
+    
+            <% verjaardagstaarten.forEach((verjaardagstaart, user) => { %>        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="/assets/verlovingstaartenmap/<%= verlovingstaart.image %>" class="rounded-circle player-img" alt="">
+                        <div class="caption">
+                            <label>Naam:</label>
+                                    <%= verlovingstaart.bruidstaartnaam %>
+                                
+                        </div>
+                        <div class="caption">
+                            <label>Aantalpersonen:</label>
+                                    <%= verlovingstaart.aantalpersonen %>
+                        </div>
+                        <div class="caption">
+                            <label>Prijs:</label>
+                            <h5>Op aanvraag. Bel: 0634700961</h5>
+                            <a href="/deleteVerlovingstaart/<%= verlovingstaart.id %>" onclick="return confirm('Weet je zeker dat je de Verlovingstaart foto wilt verwijderen?');" class="btn btn-danger float-right" style="margin-bottom: 10px;">Delete</a>
+                        </div>
+
+                </div>
+                
+                
+                
+            </div>
+                <% }) %>
+        </div>
+        
+    </form>
+
+    

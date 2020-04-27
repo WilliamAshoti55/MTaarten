@@ -1,0 +1,66 @@
+<%- include ('partials/headerAdmin.ejs'); -%>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<div>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/verjaardagstaartenenPage.css">
+    </head>
+    <header class="jumbotron">
+        <div class="container">
+        <h1>Welkom bij verjaardagstaartenen pagina</h1>
+        <p>Bekijk onze aanbod</p>
+        </div>
+    </header>
+
+
+
+        <div class="row" style="display: flex; flex-wrap: wrap; overflow: hidden;">
+    
+            <% verlovingstaarten.forEach((verlovingstaart, user) => { %>        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="/assets/verlovingstaartenmap/<%= verlovingstaart.image %>" class="rounded-circle player-img" alt="">
+                        <div class="caption">
+                            <label>Naam:</label>
+                                    <%= verlovingstaart.verlovingstaartnaam %>
+                                
+                        </div>
+                        <div class="caption">
+                            <label>Aantalpersonen:</label>
+                            <%= verlovingstaart.aantalpersonen %>
+                        </div>
+                        <div class="caption">
+                            <label>Prijs:</label>
+                            <h5>Op aanvraag. Bel: 0634700961</h5>
+                        </div>
+
+                </div>
+                
+                
+                
+            </div>
+                <% }) %>
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
