@@ -73,7 +73,7 @@ module.exports = {
 
             let image = result[0].image;
 
-            fs.unlink(`public/assets/verjaardagstaartenmap/${image}`, (err) => {
+            fs.unlink(`public/assets/verlovingstaartenmap/${image}`, (err) => {
                 if (err) {
                     return res.status(500).send(err);
                 }
@@ -81,7 +81,7 @@ module.exports = {
                     if (err) {
                         return res.status(500).send(err);
                     }
-                    res.redirect('/addVerjaardagstaart');
+                    res.redirect('/addVerlovingstaart');
                 });
             });
         });

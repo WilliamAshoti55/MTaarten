@@ -73,7 +73,7 @@ exports.verjaardagsTaartenPage = function(req, res, next){
  };
 
  exports.verlovingsTaartenPage = function(req, res, next){
-  var sql  = "SELECT * FROM `verlovingnstaarten` ORDER BY id ASC"; // query database to get all the players
+  var sql  = "SELECT * FROM `verlovingstaarten` ORDER BY id ASC"; // query database to get all the players
   db.query(sql, function(err, result){
     res.render('verlovingstaartenPage', {verlovingstaarten:result});
   });
