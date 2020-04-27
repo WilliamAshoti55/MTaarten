@@ -14,7 +14,7 @@ const port          = 3000;
 const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playerDetailsPage}   = require ('./routes/player');
 const {addBruidstaartPage, addBruidstaart, deleteBruidstaart}                                   = require ('./routes/bruidstaart');
 const {addVerjaardagstaartPage, addVerjaardagstaart, deleteVerjaardagstaart}                    = require ('./routes/verjaardagstaart');
-const {addVerlovingstaart, addVerlovingstaartPage, deleteVerlovingstaart}                      = require ('./routes/verlovingstaart');
+const {addVerlovingstaart, addVerlovingstaartPage, deleteVerlovingstaart}                       = require ('./routes/verlovingstaart');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.

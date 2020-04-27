@@ -4,7 +4,7 @@ module.exports = {
     addVerlovingstaartPage: (req, res) => {
         var sql  = "SELECT * FROM `verlovingstaarten` ORDER BY id ASC"; // query database to get all the players
         db.query(sql, function(err, result){
-            res.render('addVerjaardagstaart', {
+            res.render('addVerlovingstaart', {
                 verlovingstaarten:result,
                 message: ''
             });
