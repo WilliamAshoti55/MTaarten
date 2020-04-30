@@ -25,7 +25,6 @@ module.exports = {
         let fileExtension        = uploadedFile.mimetype.split('/')[1];
         image_name               = verjaardagstaartnaam + '.' + fileExtension;
 
-
         if(uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
             // upload the file to the /public/assets/img directory
             uploadedFile.mv(`public/assets/verjaardagstaartenmap/${image_name}`, (err ) => {
