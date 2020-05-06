@@ -61,7 +61,7 @@ module.exports = {
                         }
                         // send the player's details to the database
                         let query = "INSERT INTO `players` (achternaam, telefoonnummer, adres, email, typetaart, aantalpersonen, smaak, vulling, opmerking, prijs, reedsVoldaan, nogTeVoldoen, date, image, user_name) VALUES ('" +
-                            achternaam + "', '" + telefoonnummer + "', '" + adres + "', '" + email + "', '" + typetaart + "', '" + aantalpersonen + "', '" + smaak + "','" + vulling + "', '" + opmerking + "', '" + prijs + "', '" + reedsVoldaan + "', '" + nogTeVoldoen + "', STR_TO_DATE ('" + date + "', '%d-%m-%Y'), '" + image_name + "', '" + username + "')";
+                            achternaam + "', '" + telefoonnummer + "', '" + adres + "', '" + email + "', '" + typetaart + "', '" + aantalpersonen + "', '" + smaak + "','" + vulling + "', '" + opmerking + "', '" + prijs + "', '" + reedsVoldaan + "', '" + nogTeVoldoen + "','" + date + "', '" + image_name + "', '" + username + "')";
                         
                             db.query(query, (err, result) => {
                             if (err) {

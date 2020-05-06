@@ -5,8 +5,11 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+        $(function(date){
         var d = new Date();
-        var date = d.toDateString();
+        var date = d.toLocaleDateString();
+
+       });
         $(function(){
             $("#date").datepicker({
                 // formatDate: "dd-mm-yy",
