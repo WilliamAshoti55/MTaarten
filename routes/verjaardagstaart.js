@@ -2,6 +2,13 @@ const fs = require('fs');
 
 module.exports = {
     addVerjaardagstaartPage: (req, res) => {
+        var user =  req.session.user,
+        userId = req.session.userId;
+        console.log('Gebruiker='+userId);
+        if(userId == null){
+        res.redirect("login");
+        return;
+  }
         var sql  = "SELECT * FROM `verjaardagstaarten` ORDER BY id ASC"; // query database to get all the players
         db.query(sql, function(err, result){
             res.render('addVerjaardagstaart', {

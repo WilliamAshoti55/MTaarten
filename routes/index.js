@@ -38,7 +38,7 @@ exports.homepageMTaartenAdmin = function(req, res, next){
            
   var user =  req.session.user,
   userId = req.session.userId;
-  console.log('ddd='+userId);
+  console.log('Gebruiker='+userId);
   if(userId == null){
      res.redirect("login");
      return;
