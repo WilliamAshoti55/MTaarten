@@ -1,0 +1,11 @@
+#navbar-brand {
+  color: aliceblue;
+}
+#navbar {
+  background-color: rgb(0, 0, 0);
+}
+
+#navbar-links a {
+  color: white;
+}
+

@@ -11,19 +11,30 @@ body {
 
   #homepageMTaarten-header h1 {
     color: #fff;
+   
   }
 
   #cakeCollections-buttons {
     z-index: 1;
     position: relative;
     text-align: center;
-    padding-top: 40vh;
+    padding-top: 30vh;
+    padding-bottom: 5vh;
   }
 
   #partialsHeader {
     z-index: 1;
     position: relative;
     text-align: center;
+    
+  }
+
+  #partialsFooter {
+    
+    position: relative;
+    text-align: center;
+    padding-top: 30vh;
+    
     
   }
 
