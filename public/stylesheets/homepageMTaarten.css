@@ -1,5 +1,5 @@
 body {
-    background-color: #000;
+    /* background-color: #000; */
   }
 
   #homepageMTaarten-header h1 {
@@ -31,9 +31,9 @@ body {
 
   #partialsFooter {
     
-    position: relative;
+    
     text-align: center;
-    padding-top: 30vh;
+    padding-top: 38vh;
     
     
   }

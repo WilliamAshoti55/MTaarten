@@ -1,9 +1,10 @@
 <%- include ('partials/header.ejs'); -%>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
-<div>
+<html>
     <head>
         <link rel="stylesheet" href="/stylesheets/verjaardagstaartenenPage.css">
+        <link rel="stylesheet" href="/stylesheets/homepageMTaarten.css">
     </head>
     <div class="container">
         <header class="jumbotron">
@@ -43,8 +44,10 @@
                 <% }) %>
         </div>
     </div>
-
-</div>
+    <div id="partialsFooter">
+        <%- include ('partials/headercopy.ejs'); -%>
+        </div>
+</html>
 
 
 
