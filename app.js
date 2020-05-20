@@ -15,6 +15,7 @@ const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage, playe
 const {addBruidstaartPage, addBruidstaart, deleteBruidstaart}                                   = require ('./routes/bruidstaart');
 const {addVerjaardagstaartPage, addVerjaardagstaart, deleteVerjaardagstaart}                    = require ('./routes/verjaardagstaart');
 const {addVerlovingstaartPage, addVerlovingstaart , deleteVerlovingstaart}                      = require ('./routes/verlovingstaart');
+const {overOnsPage, contactPage, algemeenVoorwaardenPage}                                       = require ('./routes/footerPages');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
@@ -104,6 +105,9 @@ app.get ('/verjaardagsTaartenPage', routes.verjaardagsTaartenPage);
 app.get ('/eerstHeiligeCommunieTaartenPage', routes.eerstHeiligeCommunieTaartenPage);
 app.get ('/verlovingsTaartenPage', routes.verlovingsTaartenPage);
 
+app.get ('/overOnsPage', overOnsPage);
+app.get ('/contactPage', contactPage);
+app.get ('/algemeenVoorwaardenPage', algemeenVoorwaardenPage);
 
 //app.get('/verjaardagsTaartenPage', getVerjaadagstaartenPage);
 //app.get('/bruidsTaartenPage', getBruidsTaartenPage);
