@@ -68,9 +68,17 @@ exports.verjaardagsTaartenPage = function(req, res, next){
   });
 };
 
- exports.eerstHeiligeCommunieTaartenPage = function(req, res, next){
-   res.render('test.ejs');
+ exports.overOnsPage = function(req, res, next){
+   res.render('overOnsPage.ejs');
  };
+
+ exports.algemeenVoorwaardenPage = function(req, res, next){
+  res.render('algemeenVoorwaardenPage.ejs');
+};
+
+exports.contactPage = function(req, res, next){
+  res.render('contactPage.ejs');
+};
 
  exports.verlovingsTaartenPage = function(req, res, next){
   var sql  = "SELECT * FROM `verlovingstaarten` ORDER BY id ASC"; // query database to get all the players
