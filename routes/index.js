@@ -77,7 +77,9 @@ exports.verjaardagsTaartenPage = function(req, res, next){
 };
 
 exports.contactPage = function(req, res, next){
-  res.render('contactPage.ejs');
+  res.render('contactPage.ejs', {
+    message: ''
+  });
 };
 
  exports.verlovingsTaartenPage = function(req, res, next){

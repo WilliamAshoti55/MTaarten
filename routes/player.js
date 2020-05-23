@@ -8,8 +8,8 @@ module.exports = {
             res.redirect("login");
         }else {
         res.render('add-player.ejs', {
-            title: 'Welcome to Socka | Add a new player'
-            ,message: ''
+            title: 'Welcome to Socka | Add a new player',
+            message: ''
         });
     }
     },
