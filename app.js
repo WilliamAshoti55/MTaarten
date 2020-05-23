@@ -110,9 +110,9 @@ app.post('/send', (req, res) =>{
         <h3>Contact Details</h3>
         <ul>
         <li>Name: ${req.body.name}</li>
-        <li>Name: ${req.body.company}</li>
-        <li>Name: ${req.body.email}</li>
-        <li>Name: ${req.body.phone}</li>
+        <li>Company: ${req.body.company}</li>
+        <li>Email: ${req.body.email}</li>
+        <li>Phone: ${req.body.phone}</li>
         </ul>
         <h3>Message</h3>
         <p>${req.body.message}</p>
