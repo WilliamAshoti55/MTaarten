@@ -1,7 +1,7 @@
 <%- include ('partials/header.ejs'); -%>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
-<div>
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +9,48 @@
         <link rel="stylesheet" href="/stylesheets/verjaardagstaartenenPage.css">
         <link rel="stylesheet" href="/stylesheets/homepageMTaarten.css">
     </head>
-    <div class="container">
-    <header class="jumbotron">
-        <div class="container">
-        <h1>Welkom bij verjaardagstaartenen pagina</h1>
-        <p>Bekijk onze aanbod</p>
-        </div>
-    </header>
+        <body>
+            <div class="container">
+                <header class="jumbotron">
+                    <div class="container">
+                    <h1>Welkom bij verjaardagstaarten pagina</h1>
+                    <p>Bekijk onze aanbod</p>
+                    </div>
+                </header>
 
+                <div class="row" style="display: flex; flex-wrap: wrap; overflow: hidden;">
+            
+                    <% verjaardagstaarten.forEach((verjaardagstaart, user) => { %>        
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <img src="/assets/verjaardagstaartenmap/<%= verjaardagstaart.image %>" class="rounded-circle player-img" alt="">
+                                <div class="caption">
+                                    <label>Naam:</label>
+                                            <%= verjaardagstaart.verjaardagstaartnaam %>
+                                        
+                                </div>
+                                <div class="caption">
+                                    <label>Aantalpersonen:</label>
+                                    <%= verjaardagstaart.aantalpersonen %>
+                                </div>
+                                <div class="caption">
+                                    <label>Prijs:</label>
+                                    <h5>Op aanvraag. Bel: 0634700961</h5>
+                                </div>
 
-
-        <div class="row" style="display: flex; flex-wrap: wrap; overflow: hidden;">
-    
-            <% verjaardagstaarten.forEach((verjaardagstaart, user) => { %>        
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnail">
-                    <img src="/assets/verjaardagstaartenmap/<%= verjaardagstaart.image %>" class="rounded-circle player-img" alt="">
-                        <div class="caption">
-                            <label>Naam:</label>
-                                    <%= verjaardagstaart.verjaardagstaartnaam %>
-                                
                         </div>
-                        <div class="caption">
-                            <label>Aantalpersonen:</label>
-                            <%= verjaardagstaart.aantalpersonen %>
-                        </div>
-                        <div class="caption">
-                            <label>Prijs:</label>
-                            <h5>Op aanvraag. Bel: 0634700961</h5>
-                        </div>
-
+                        
+                        
+                        
+                    </div>
+                        <% }) %>
                 </div>
-                
-                
-                
             </div>
-                <% }) %>
+        </body>
+        <div id="partialsFooter">
+            <%- include ('partials/footer.ejs'); -%>
         </div>
-    </div>
-    <div id="partialsFooter">
-        <%- include ('partials/footer.ejs'); -%>
-        </div>
-</div>
+    </html>
 
 
 

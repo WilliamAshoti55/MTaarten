@@ -126,9 +126,9 @@ app.post('/send', (req, res) =>{
       user: 'info@mtaarten.nl', // generated ethereal user
       pass: 'Emlienashoti55', // generated ethereal password
     },
-    tls: {
-        rejectUnauthorized: false
-    }
+    // tls: {
+    //     rejectUnauthorized: false
+    // }
   });
 
   // send mail with defined transport object
