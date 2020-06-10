@@ -104,54 +104,54 @@ app.get ('/verjaardagsTaartenPage', routes.verjaardagsTaartenPage);
 app.get ('/verlovingsTaartenPage', routes.verlovingsTaartenPage);
 app.get ('/overOnsPage', routes.overOnsPage);
 app.get ('/contactPage', routes.contactPage);
-app.post('/send', (req, res) =>{
-    const output = `
-        <p> You have a new contact request</p>
-        <h3>Contact Details</h3>
-        <ul>
-        <li>Name: ${req.body.name}</li>
-        <li>Company: ${req.body.company}</li>
-        <li>Email: ${req.body.email}</li>
-        <li>Phone: ${req.body.phone}</li>
-        </ul>
-        <h3>Message</h3>
-        <p>${req.body.message}</p>
-    `;
-    // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.bhosted.nl',
-    port: 465,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: 'info@mtaarten.nl', // generated ethereal user
-      pass: 'Emlienashoti55', // generated ethereal password
-    },
-    // tls: {
-    //     rejectUnauthorized: false
-    // }
-  });
+// app.post('/send', (req, res) =>{
+//     const output = `
+//         <p> You have a new contact request</p>
+//         <h3>Contact Details</h3>
+//         <ul>
+//         <li>Name: ${req.body.name}</li>
+//         <li>Company: ${req.body.company}</li>
+//         <li>Email: ${req.body.email}</li>
+//         <li>Phone: ${req.body.phone}</li>
+//         </ul>
+//         <h3>Message</h3>
+//         <p>${req.body.message}</p>
+//     `;
+//     // create reusable transporter object using the default SMTP transport
+//   let transporter = nodemailer.createTransport({
+//     host: 'smtp.bhosted.nl',
+//     port: 465,
+//     secure: true, // true for 465, false for other ports
+//     auth: {
+//       user: 'info@mtaarten.nl', // generated ethereal user
+//       pass: 'Emlienashoti55', // generated ethereal password
+//     },
+//     // tls: {
+//     //     rejectUnauthorized: false
+//     // }
+//   });
 
-  // send mail with defined transport object
-  let mailOptions = {
-    from: '"Fred Foo 👻" <info@mtaarten.nl>', // sender address
-    to: 'info@mtaarten.nl', // list of receivers
-    subject: 'Test ✔', // Subject line
-    text: 'Hello world?', // plain text body
-    html: output, // html body
-  };
-  transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-          return console.log(error);
-      }
-      console.log("Message sent: %s", info.messageId);
-      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  });
+//   // send mail with defined transport object
+//   let mailOptions = {
+//     from: '"Fred Foo 👻" <info@mtaarten.nl>', // sender address
+//     to: 'info@mtaarten.nl', // list of receivers
+//     subject: 'Test ✔', // Subject line
+//     text: 'Hello world?', // plain text body
+//     html: output, // html body
+//   };
+//   transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) {
+//           return console.log(error);
+//       }
+//       console.log("Message sent: %s", info.messageId);
+//       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+//   });
   
 
-  res.render('contactPage', {
-      message: 'Email verstuurd'
-  });
-});
+//   res.render('contactPage', {
+//       message: 'Email verstuurd'
+//   });
+// });
 app.get ('/algemeenVoorwaardenPage', routes.algemeenVoorwaardenPage);
 
 //app.get('/verjaardagsTaartenPage', getVerjaadagstaartenPage);
