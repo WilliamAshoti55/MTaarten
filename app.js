@@ -149,7 +149,7 @@ app.post('/send', (req, res) =>{
   
 
   res.render('contactPage', {
-      message: 'Email verstuurd'
+      message: 'We hebben uw aanvraag ontvangen en we zullen u binnen twee werkdagen beantwoorden'
   });
 });
 app.get ('/algemeenVoorwaardenPage', routes.algemeenVoorwaardenPage);

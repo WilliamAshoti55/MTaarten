@@ -15,15 +15,15 @@
          var a = document.getElementById("phone").value;
          console.log(a);
         if(a=="") {
-            document.getElementById("messages").innerHTML="verdomd";
+            document.getElementById("messages").innerHTML="Vul aub uw telefoonnummer in";
             return false;
                   }
        if(isNaN(a)){
-        document.getElementById("messages").innerHTML="Only number are allowed";
+        document.getElementById("messages").innerHTML="Alleen nummers zijn toegestaan";
          return false;
        }
        if((a.length<10) || (a.length>14)){
-        document.getElementById("messages").innerHTML="Number must be 10 digits ";
+        document.getElementById("messages").innerHTML="Telefoonnumer mag niet kleiner dan 10 nummers zijn.";
          return false;
        }
       }
