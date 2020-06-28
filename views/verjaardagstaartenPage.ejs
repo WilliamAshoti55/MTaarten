@@ -1,5 +1,5 @@
 <%- include ('partials/header.ejs'); -%>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 
 <html>
     <head>
@@ -8,6 +8,28 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="/stylesheets/verjaardagstaartenenPage.css">
         <link rel="stylesheet" href="/stylesheets/homepageMTaarten.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <!--Jquery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--Floating WhatsApp css-->
+        <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
+        <!--Floating WhatsApp javascript-->
+        <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
+        <script type="text/javascript">  
+            $(function () {
+                    $('#WAButton').floatingWhatsApp({
+                        phone: '+31634700961', //WhatsApp Business phone number
+                        headerTitle: 'U chat nu met MTaarten', //Popup Title
+                        popupMessage: 'Goedendag, waarmee kunnen wij u helpen', //Popup Message
+                        showPopup: true, //Enables popup display
+                        buttonImage: '<img src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/whatsapp.svg" />', //Button Image
+                        //headerColor: 'crimson', //Custom header color
+                        //backgroundColor: 'crimson', //Custom background button color
+                        position: "right" //Position: left | right
+         
+                    });
+                });
+         </script>  
     </head>
         <body>
             <div class="container">
@@ -48,6 +70,7 @@
                         <% }) %>
                 </div>
             </div>
+            <div id="WAButton"></div>
         </body>
         <div id="partialsFooter">
             <%- include ('partials/footer.ejs'); -%>
